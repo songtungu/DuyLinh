@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thiệp Cưới Duy & Thảo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+      color: #333;
+    }
+    .container {
+      padding: 60px 20px;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .date {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+    .countdown {
+      font-size: 28px;
+      font-weight: bold;
+      color: #d63384;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Duy ♥ Thảo</h1>
+    <div class="date">Ngày cưới: 20/12/2026</div>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+<script>
+  const weddingDate = new Date("Dec 20, 2026 00:00:00").getTime();
+  const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerHTML =
+      "Còn " + days + " ngày nữa ♥";
+    if (distance < 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").innerHTML = "Hôm nay là ngày cưới!";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
