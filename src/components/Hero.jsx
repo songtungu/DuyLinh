@@ -1,9 +1,10 @@
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="overlay">
-        <h1>Duy & Thảo</h1>
-        <p>20 • 12 • 2026</p>
+      <div className="hero-content">
+        <h1>Duy & Linh</h1>
+        <p>Save The Date</p>
+        <span>12 • 12 • 2026</span>
       </div>
     </section>
   )

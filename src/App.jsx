@@ -3,9 +3,8 @@ import Story from "./components/Story"
 import Event from "./components/Event"
 import Gallery from "./components/Gallery"
 import RSVP from "./components/RSVP"
-import "./styles/main.css"
 
-export default function App() {
+function App() {
   return (
     <>
       <Hero />
@@ -13,6 +12,11 @@ export default function App() {
       <Event />
       <Gallery />
       <RSVP />
+      <footer>
+        © 2026 Duy & Linh
+      </footer>
     </>
   )
 }
+
+export default App
