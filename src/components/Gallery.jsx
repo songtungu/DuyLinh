@@ -4,9 +4,10 @@ export default function Gallery() {
       <h2>Gallery</h2>
 
       <div className="gallery">
-        <img src="/cover.jpg" alt="gallery" />
-        <img src="/gallery1.jpg" alt="gallery" />
-        <img src="/gallery2.jpg" alt="gallery" />
+        <img src="/DuyLinh/images/gallery1.jpg" alt="" />
+        <img src="/DuyLinh/images/gallery2.jpg" alt="" />
+        <img src="/DuyLinh/images/IMG_1355.JPG" alt="" />
+        <img src="/DuyLinh/images/IMG_1512.JPG" alt="" />
       </div>
     </section>
   );

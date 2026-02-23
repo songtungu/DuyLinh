@@ -1,6 +1,6 @@
 export default function RSVP() {
   return (
-    <section className="section">
+    <section className="section visible">
       <h2>RSVP</h2>
 
       <form
