@@ -1,22 +1,24 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react";
 
 export default function MusicPlayer() {
-
-  const audioRef = useRef(null)
-  const [playing, setPlaying] = useState(false)
+  const audioRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     if (playing) {
-      audioRef.current.play()
+      audioRef.current.play();
     } else {
-      audioRef.current.pause()
+      audioRef.current.pause();
     }
-  }, [playing])
+  }, [playing]);
 
   return (
-    <div className="music-player" onClick={() => setPlaying(!playing)}>
+    <div
+      className="music-player"
+      onClick={() => setPlaying(!playing)}
+    >
       {playing ? "🔊" : "🔈"}
-      <audio ref={audioRef} loop src="/music.mp3" />
+      <audio ref={audioRef} loop src="/music/wedding.mp3" />
     </div>
-  )
+  );
 }

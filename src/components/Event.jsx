@@ -8,5 +8,5 @@ export default function Event() {
         <p>Hà Nội, Việt Nam</p>
       </div>
     </section>
-  )
+  );
 }
