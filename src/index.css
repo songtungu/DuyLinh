@@ -3,6 +3,7 @@
 :root {
   --red: #7b0f1a;
   --gold: #c6a85a;
+  --gold-light: #e8d9a8;
   --cream: #f9f4e8;
   --dark: #2b2b2b;
 }
@@ -11,9 +12,12 @@ body {
   margin: 0;
   font-family: "Playfair Display", serif;
   background: var(--cream);
+  overflow-x: hidden;
 }
 
-/* OPENING SCREEN */
+/* ========================= */
+/* OPENING SCREEN PREMIUM */
+/* ========================= */
 
 .opening-screen {
   height: 100vh;
@@ -22,57 +26,109 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--cream);
+  position: relative;
+}
+
+.opening-screen::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 3px solid var(--gold);
+  pointer-events: none;
 }
 
 .opening-card {
-  border: 2px solid var(--gold);
-  padding: 60px;
   text-align: center;
+  padding: 80px 60px;
+}
+
+.opening-card p {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .opening-card h1 {
   font-family: "Great Vibes", cursive;
-  font-size: 60px;
+  font-size: 72px;
+  color: var(--gold-light);
+  margin: 20px 0;
 }
 
 .opening-card button {
-  margin-top: 20px;
-  padding: 12px 30px;
-  border: none;
-  background: var(--gold);
+  margin-top: 30px;
+  padding: 14px 40px;
+  border: 2px solid var(--gold);
+  background: transparent;
+  color: var(--gold-light);
   cursor: pointer;
+  transition: 0.4s ease;
+  font-size: 16px;
 }
 
-/* HERO */
+.opening-card button:hover {
+  background: var(--gold);
+  color: var(--red);
+}
+
+/* ========================= */
+/* HERO PREMIUM */
+/* ========================= */
 
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(123,15,26,0.8), rgba(123,15,26,0.8)),
+  background: linear-gradient(rgba(123,15,26,0.85), rgba(123,15,26,0.85)),
               url("/cover.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: var(--cream);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 30px;
+  border: 3px solid var(--gold);
+  pointer-events: none;
 }
 
 .hero-frame {
-  border: 2px solid var(--gold);
-  padding: 80px;
+  padding: 100px;
+  max-width: 900px;
 }
 
 .names {
   font-family: "Great Vibes", cursive;
-  font-size: 70px;
-  color: var(--gold);
+  font-size: 90px;
+  color: var(--gold-light);
+  margin: 20px 0;
 }
 
+.save-date {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.date {
+  letter-spacing: 6px;
+  font-size: 18px;
+}
+
+/* ========================= */
+/* SECTION GLOBAL */
+/* ========================= */
+
 .section {
-  padding: 100px 20px;
+  min-height: 90vh;
+  padding: 120px 20px;
   text-align: center;
   opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
+  transform: translateY(60px);
+  transition: 0.9s ease;
 }
 
 .section.visible {
@@ -80,56 +136,130 @@ body {
   transform: translateY(0);
 }
 
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: "";
+  width: 80px;
+  height: 2px;
+  background: var(--gold);
+  display: block;
+  margin: 15px auto 0;
+}
+
+/* ========================= */
+/* RED SECTION */
+/* ========================= */
+
 .section.red {
   background: var(--red);
   color: var(--cream);
+  position: relative;
 }
 
-.event-box {
+.section.red::before {
+  content: "";
+  position: absolute;
+  inset: 30px;
   border: 2px solid var(--gold);
-  padding: 60px;
-  max-width: 500px;
+  pointer-events: none;
+}
+
+/* ========================= */
+/* EVENT BOX */
+/* ========================= */
+
+.event-box {
+  border: 3px solid var(--gold);
+  padding: 80px;
+  max-width: 600px;
   margin: auto;
 }
 
+.event-box h2 {
+  margin-bottom: 20px;
+}
+
+/* ========================= */
+/* GALLERY PREMIUM */
+/* ========================= */
+
 .gallery {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 60px auto 0;
 }
 
 .gallery img {
-  width: 300px;
+  width: 100%;
   border: 4px solid var(--gold);
+  transition: 0.5s ease;
 }
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ========================= */
+/* RSVP PREMIUM */
+/* ========================= */
 
 .rsvp-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 400px;
-  margin: auto;
+  max-width: 450px;
+  margin: 60px auto 0;
 }
 
 .rsvp-form input,
 .rsvp-form select {
-  padding: 12px;
+  padding: 14px;
+  border: 2px solid var(--gold);
+  background: transparent;
+  font-family: inherit;
 }
 
 .rsvp-form button {
-  padding: 12px;
+  padding: 14px;
   background: var(--red);
-  color: white;
-  border: none;
+  color: var(--cream);
+  border: 2px solid var(--gold);
+  cursor: pointer;
+  transition: 0.4s ease;
 }
+
+.rsvp-form button:hover {
+  background: var(--gold);
+  color: var(--red);
+}
+
+/* ========================= */
+/* MUSIC BUTTON */
+/* ========================= */
 
 .music-player {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
   background: var(--red);
-  color: white;
-  padding: 10px;
+  color: var(--gold-light);
+  padding: 14px;
   cursor: pointer;
   border-radius: 50%;
+  border: 2px solid var(--gold);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.music-player:hover {
+  background: var(--gold);
+  color: var(--red);
 }
