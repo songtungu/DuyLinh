@@ -1,30 +1,135 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&display=swap');
 
-html {
-  scroll-behavior: smooth;
+:root {
+  --red: #7b0f1a;
+  --gold: #c6a85a;
+  --cream: #f9f4e8;
+  --dark: #2b2b2b;
 }
 
 body {
-  background: #F5F1EA;
-  color: #3A2E2A;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.7;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  background: var(--cream);
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 2px;
+/* OPENING SCREEN */
+
+.opening-screen {
+  height: 100vh;
+  background: var(--red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cream);
 }
 
-section {
+.opening-card {
+  border: 2px solid var(--gold);
+  padding: 60px;
+  text-align: center;
+}
+
+.opening-card h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 60px;
+}
+
+.opening-card button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: none;
+  background: var(--gold);
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(123,15,26,0.8), rgba(123,15,26,0.8)),
+              url("/cover.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--cream);
+}
+
+.hero-frame {
+  border: 2px solid var(--gold);
+  padding: 80px;
+}
+
+.names {
+  font-family: "Great Vibes", cursive;
+  font-size: 70px;
+  color: var(--gold);
+}
+
+.section {
   padding: 100px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
 }
 
-.container {
-  max-width: 1100px;
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section.red {
+  background: var(--red);
+  color: var(--cream);
+}
+
+.event-box {
+  border: 2px solid var(--gold);
+  padding: 60px;
+  max-width: 500px;
   margin: auto;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 300px;
+  border: 4px solid var(--gold);
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.rsvp-form input,
+.rsvp-form select {
+  padding: 12px;
+}
+
+.rsvp-form button {
+  padding: 12px;
+  background: var(--red);
+  color: white;
+  border: none;
+}
+
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--red);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
 }
