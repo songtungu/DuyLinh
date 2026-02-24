@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import Hero from "./components/Hero";
 import Story from "./components/Story";
 import Event from "./components/Event";
-import Gallery from "./components/Gallery";
 import RSVP from "./components/RSVP";
 
 export default function App() {
@@ -41,7 +40,6 @@ export default function App() {
           <Hero />
           <Story />
           <Event />
-          <Gallery />
           <RSVP />
         </>
       )}

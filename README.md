@@ -18,3 +18,5 @@ git add .
 git commit -m "update something"
 git push
 npm run deploy
+
+npm run build
