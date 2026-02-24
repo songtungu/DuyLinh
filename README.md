@@ -17,6 +17,6 @@ If you are developing a production application, we recommend using TypeScript wi
 git add .
 git commit -m "update something"
 git push
+npm run build
 npm run deploy
 
-npm run build
